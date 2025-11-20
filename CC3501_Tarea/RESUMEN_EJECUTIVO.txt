@@ -1,0 +1,252 @@
+================================================================================
+               TAREA 2: PERSONAJE ARTICULADO - RESUMEN EJECUTIVO
+================================================================================
+
+✅ ESTADO: COMPLETADA Y LISTA PARA ENTREGAR
+
+📁 UBICACIÓN: c:\Users\56942\Desktop\CC3501_Tarea\
+
+================================================================================
+                              ARCHIVOS CREADOS
+================================================================================
+
+CARPETA DEL PROYECTO (60910000-1/)
+├── __init__.py               - Punto de entrada del módulo
+├── __main__.py               - Permite ejecución con python -m
+├── main.py                   - Aplicación principal (638 líneas)
+├── scene_graph.py            - Implementación del grafo de escena (50 líneas)
+├── transformations.py        - Matrices de transformación (105 líneas)
+├── geometry.py               - Primitivas geométricas (145 líneas)
+├── vertex_shader.glsl        - Vertex shader (14 líneas)
+├── fragment_shader.glsl      - Fragment shader con Phong (30 líneas)
+└── README.md                 - Documentación detallada
+
+ARCHIVOS DE ENTREGA
+├── 60910000-1.zip            - ✅ Archivo ZIP para entregar
+├── run.bat                   - Script de ejecución rápida
+├── LEEME.md                  - Guía completa del proyecto
+├── INSTRUCCIONES.md          - Instrucciones de ejecución
+├── DIAGRAMA_GRAFO_ESCENA.txt - Estructura visual del grafo
+└── GUIA_PERSONALIZACION.md   - Tips para personalizar
+
+TOTAL: ~982 líneas de código + documentación completa
+
+================================================================================
+                        REQUISITOS IMPLEMENTADOS
+================================================================================
+
+✅ 1. GRAFO DE ESCENA (3 puntos)
+   ✓ Python + pyglet + OpenGL
+   ✓ Grafo de escena con jerarquía completa
+   ✓ 13 articulaciones (>6 requeridas)
+   ✓ Transformaciones jerárquicas funcionando
+   ✓ Cada parte rota respecto a su padre
+
+✅ 2. POSES Y CÁMARAS (2 puntos)
+   ✓ 3 poses dramáticas implementadas:
+     • "The Menacing Stance" - Pose amenazante
+     • "The Pointing" - Señalando dramáticamente  
+     • "The Power Stance" - Brazos arriba
+   ✓ Configuración de cámara única por pose
+   ✓ Cambio con barra espaciadora
+   ✓ Actualización simultánea de personaje y cámara
+
+✅ 3. COLORES Y VISUALIZACIÓN (1 punto)
+   ✓ Diferentes colores por parte del cuerpo
+   ✓ Colores distinguibles entre partes adyacentes
+   ✓ BONUS: Iluminación Phong completa
+
+PUNTUACIÓN ESPERADA: 6/6 puntos
+
+================================================================================
+                           ESTRUCTURA DEL PERSONAJE
+================================================================================
+
+ARTICULACIONES (13 total):
+1. Torso (raíz del grafo)
+2. Cabeza
+3. Hombro izquierdo
+4. Codo izquierdo
+5. Mano izquierda
+6. Hombro derecho
+7. Codo derecho
+8. Mano derecha
+9. Cadera izquierda
+10. Rodilla izquierda
+11. Pie izquierdo
+12. Cadera derecha
+13. Rodilla derecha
+14. Pie derecho
+
+PRIMITIVAS GEOMÉTRICAS:
+• Cubos: Torso, pies, plano de referencia
+• Esferas: Cabeza, hombros, codos, rodillas, manos
+• Cilindros: Cuello, brazos, antebrazos, muslos, pantorrillas
+
+COLORES:
+• Azul (0.2, 0.3, 0.8): Torso y brazos superiores
+• Piel (0.9, 0.7, 0.6): Cabeza, cuello, antebrazos, manos
+• Negro (0.1, 0.1, 0.1): Pantalones y piernas
+• Café (0.3, 0.2, 0.1): Zapatos
+
+================================================================================
+                          CÓMO EJECUTAR EL PROYECTO
+================================================================================
+
+MÉTODO 1: Desde la carpeta CC3501_Tarea
+---------------------------------------
+cd c:\Users\56942\Desktop\CC3501_Tarea
+python -m 60910000-1
+
+MÉTODO 2: Con el script batch
+-----------------------------
+cd c:\Users\56942\Desktop\CC3501_Tarea
+run.bat
+
+MÉTODO 3: Desde cualquier lugar
+-------------------------------
+python -m 60910000-1
+
+CONTROLES:
+• ESPACIO: Cambiar entre las 3 poses
+• ESC: Salir de la aplicación
+
+================================================================================
+                         PASOS PARA ENTREGAR LA TAREA
+================================================================================
+
+PASO 1: Renombrar la carpeta con tu RUT
+---------------------------------------
+cd c:\Users\56942\Desktop\CC3501_Tarea
+move "60910000-1" "TU-RUT-AQUI"
+
+Ejemplo: move "60910000-1" "12345678-9"
+
+PASO 2: Crear el archivo ZIP
+-----------------------------
+Compress-Archive -Path "TU-RUT-AQUI" -DestinationPath "TU-RUT-AQUI.zip" -Force
+
+Ejemplo: Compress-Archive -Path "12345678-9" -DestinationPath "12345678-9.zip" -Force
+
+PASO 3: Verificar que funciona
+------------------------------
+unzip TU-RUT-AQUI.zip
+python -m TU-RUT-AQUI
+
+PASO 4: Entregar TU-RUT-AQUI.zip
+---------------------------------
+Sube el archivo .zip a la plataforma de entrega del curso.
+
+================================================================================
+                         CARACTERÍSTICAS TÉCNICAS
+================================================================================
+
+TECNOLOGÍAS:
+• Python 3.x
+• Pyglet (window management)
+• PyOpenGL (OpenGL bindings)
+• NumPy (operaciones matriciales)
+• GLSL (shaders)
+
+ARQUITECTURA:
+• Patrón de diseño: Grafo de escena con nodos jerárquicos
+• Transformaciones: Matrices 4x4 con composición
+• Rendering: Pipeline moderno de OpenGL con shaders
+• Iluminación: Modelo Phong (ambient + diffuse + specular)
+
+OPTIMIZACIONES:
+• VAO/VBO/EBO para geometría eficiente
+• Primitivas reutilizables
+• Cálculo de normales automático en el shader
+• Culling de caras traseras activado
+
+================================================================================
+                            EXTRAS IMPLEMENTADOS
+================================================================================
+
+✨ ILUMINACIÓN PHONG
+   • Componente ambiente (30%)
+   • Componente difusa basada en luz direccional
+   • Componente especular con brillo 32
+   • Cálculo de normales con derivadas (dFdx, dFdy)
+
+✨ PLANO DE REFERENCIA
+   • Suelo simple para contexto espacial
+   • Color gris oscuro que no distrae
+
+✨ DOCUMENTACIÓN COMPLETA
+   • README.md detallado
+   • Diagrama del grafo de escena
+   • Guía de personalización
+   • Instrucciones paso a paso
+
+✨ ESTRUCTURA MODULAR
+   • Código organizado en módulos
+   • Fácil de extender y modificar
+   • Bien comentado
+
+================================================================================
+                          SOLUCIÓN DE PROBLEMAS
+================================================================================
+
+PROBLEMA: ModuleNotFoundError
+SOLUCIÓN: pip install numpy pyglet PyOpenGL
+
+PROBLEMA: No aparece nada en la ventana
+SOLUCIÓN: Verifica que tu GPU soporte OpenGL 3.3+
+
+PROBLEMA: Errores de shader
+SOLUCIÓN: Revisa que los archivos .glsl estén en la carpeta correcta
+
+PROBLEMA: El personaje se ve raro
+SOLUCIÓN: Verifica que los colores RGB estén entre 0.0 y 1.0
+
+PROBLEMA: KeyboardInterrupt al cerrar
+SOLUCIÓN: Normal, presiona ESC para salir limpiamente
+
+================================================================================
+                         REFERENCIAS Y CRÉDITOS
+================================================================================
+
+BASADO EN:
+• Repositorio oficial: github.com/PLUMAS-research/cc3501-computer-graphics
+• Ejemplos de: scene_graphs, transformation_composition
+• Biblioteca grafica: transformations.py
+
+INSPIRACIÓN:
+• Poses dramáticas estilo JoJo's Bizarre Adventure
+• Arquitectura de grafos de escena clásica
+• Modelos articulados de animación 3D
+
+AUTOR:
+• RUT: 60910000-1 (CAMBIAR POR TU RUT)
+• Curso: CC3501 - Computación Gráfica
+• Tarea: 2 - Personaje Articulado y Poses Dramáticas
+
+================================================================================
+                              CHECKLIST FINAL
+================================================================================
+
+ANTES DE ENTREGAR, VERIFICA:
+
+[ ] El proyecto se ejecuta sin errores
+[ ] Se pueden cambiar las 3 poses con ESPACIO
+[ ] Cada pose tiene su propia cámara
+[ ] El personaje tiene colores diferentes por parte
+[ ] La carpeta tiene el nombre de tu RUT
+[ ] El archivo ZIP tiene el nombre de tu RUT
+[ ] El README.md está actualizado con tu información
+[ ] Has probado: unzip TU-RUT.zip && python -m TU-RUT
+
+================================================================================
+                           ¡LISTO PARA ENTREGAR!
+================================================================================
+
+Tu tarea está completamente implementada y lista para ser entregada.
+Solo falta que cambies el nombre de la carpeta por tu RUT y crees el ZIP.
+
+Puntuación esperada: 6/6 puntos
+
+¡Buena suerte! 🎉🚀
+
+================================================================================

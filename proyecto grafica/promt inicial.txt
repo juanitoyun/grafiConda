@@ -1,0 +1,5 @@
+PALABRAS DEL PROFE <<< Hola! Por favor deben entregar su propuesta de proyecto para la tarea 3, con una semana como plazo. Esta propuesta es corta (un párrafo) con la idea que quieren desarrollar. Como dice nuestras reglas del juego, la tarea 3 es un desarrollo libre que haga uso de las técnicas vistas en el curso.
+Una vez que su propuesta sea aprobada, tienen hasta el último día de clases para entregar el desarrollo.
+Por si acaso, la entrega de hoy no tiene que ser la idea más pulida del mundo. Nosotros vamos a revisar su idea y les diremos si está ok o si pueden agregar algo para validarla. Saludos >>>
+
+Considerando la tarea de propuesta de proyecto descrita por el profesor, sumado a los contenidos del repositorio del curso (https://github.com/PLUMAS-research/cc3501-computer-graphics) con especial enfoque en los capítulos mostrados en la imagen, dame ideas de que tipo de proyectos podría diseñar y clasifícalos según factibilidad&Facilidad vs ocio&Entretenimiento, buscando un equilibrio sano y que posiblemente genere buenos resultados

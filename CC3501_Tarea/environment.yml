@@ -1,0 +1,13 @@
+name: grafica
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pillow
+  - pyglet
+  - pip
+  - pip:
+    - PyOpenGL
+    - PyOpenGL-accelerate

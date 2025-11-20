@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+venv/
+venv_*/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Python packaging
+*.egg
+
+# Logs
+*.log
+
+# Ignore conda environments
+envs/
+conda-env/
+
+# Node
+node_modules/

@@ -1,0 +1,166 @@
+"""
+DIAGRAMA DEL GRAFO DE ESCENA
+=============================
+
+Estructura jerárquica del personaje articulado con 13 articulaciones:
+
+ROOT (Transformación global del personaje)
+│
+└─── TORSO (Cubo azul 0.8x1.2x0.4)
+     │
+     ├─── CUELLO (Cilindro color piel)
+     │    │
+     │    └─── CABEZA (Esfera color piel)
+     │
+     ├─── HOMBRO_IZQ (Esfera azul) ◄─ ARTICULACIÓN 1
+     │    │
+     │    └─── BRAZO_SUP_IZQ (Cilindro azul)
+     │         │
+     │         └─── CODO_IZQ (Esfera color piel) ◄─ ARTICULACIÓN 2
+     │              │
+     │              └─── ANTEBRAZO_IZQ (Cilindro color piel)
+     │                   │
+     │                   └─── MANO_IZQ (Esfera color piel) ◄─ ARTICULACIÓN 3
+     │
+     ├─── HOMBRO_DER (Esfera azul) ◄─ ARTICULACIÓN 4
+     │    │
+     │    └─── BRAZO_SUP_DER (Cilindro azul)
+     │         │
+     │         └─── CODO_DER (Esfera color piel) ◄─ ARTICULACIÓN 5
+     │              │
+     │              └─── ANTEBRAZO_DER (Cilindro color piel)
+     │                   │
+     │                   └─── MANO_DER (Esfera color piel) ◄─ ARTICULACIÓN 6
+     │
+     ├─── CADERA_IZQ (Esfera negra) ◄─ ARTICULACIÓN 7
+     │    │
+     │    └─── MUSLO_IZQ (Cilindro negro)
+     │         │
+     │         └─── RODILLA_IZQ (Esfera color piel) ◄─ ARTICULACIÓN 8
+     │              │
+     │              └─── PANTORRILLA_IZQ (Cilindro negro)
+     │                   │
+     │                   └─── PIE_IZQ (Cubo café) ◄─ ARTICULACIÓN 9
+     │
+     └─── CADERA_DER (Esfera negra) ◄─ ARTICULACIÓN 10
+          │
+          └─── MUSLO_DER (Cilindro negro)
+               │
+               └─── RODILLA_DER (Esfera color piel) ◄─ ARTICULACIÓN 11
+                    │
+                    └─── PANTORRILLA_DER (Cilindro negro)
+                         │
+                         └─── PIE_DER (Cubo café) ◄─ ARTICULACIÓN 12
+
+
+RESUMEN:
+========
+- Total de nodos: 27
+- Articulaciones principales: 13 (mucho más de las 6 requeridas)
+- Profundidad máxima del árbol: 7 niveles
+- Primitivas usadas: Cubos, Esferas, Cilindros
+
+
+TRANSFORMACIONES POR POSE:
+===========================
+
+POSE 1: "The Menacing Stance"
+------------------------------
+- Torso: Rotación Y (π/8)
+- Cabeza: Rotación Z (-π/12)
+- Hombro izq: Rotación Z (π/4) + X (π/6)
+- Codo izq: Rotación Z (π/3)
+- Hombro der: Rotación Z (-π/3) + X (-π/4)
+- Codo der: Rotación Z (-π/2.5)
+- Cadera izq: Rotación X (π/8)
+- Cadera der: Rotación X (-π/12)
+Cámara: eye(3, 1.5, 4), at(0, 0.5, 0)
+
+POSE 2: "The Pointing"
+----------------------
+- Torso: Rotación Y (-π/6)
+- Cabeza: Rotación Y (π/6)
+- Hombro izq: Rotación Z (π/6)
+- Hombro der: Rotación Z (-π/2) + Y (π/4) + X (-π/8)
+- Codo der: Rotación Z (-π/6)
+- Cadera izq: Rotación X (-π/10) + Z (π/12)
+- Cadera der: Rotación X (π/6)
+- Rodilla der: Rotación X (π/8)
+Cámara: eye(4, 0.5, 2), at(0, 1, 0)
+
+POSE 3: "The Power Stance"
+---------------------------
+- Torso: Sin rotación (identidad)
+- Cabeza: Rotación X (π/12)
+- Hombro izq: Rotación Z (π/2.5) + Y (-π/6)
+- Codo izq: Rotación Z (π/2)
+- Hombro der: Rotación Z (-π/2.5) + Y (π/6)
+- Codo der: Rotación Z (-π/2)
+- Cadera izq: Rotación Z (π/12)
+- Cadera der: Rotación Z (-π/12)
+Cámara: eye(2, 2, 5), at(0, 1, 0)
+
+
+COLORES DEL PERSONAJE:
+======================
+- Torso y brazos superiores: RGB(0.2, 0.3, 0.8) - Azul
+- Cabeza, cuello, antebrazos, manos: RGB(0.9, 0.7, 0.6) - Color piel
+- Caderas y piernas: RGB(0.1, 0.1, 0.1) - Negro
+- Pies: RGB(0.3, 0.2, 0.1) - Café
+
+
+SISTEMA DE COORDENADAS:
+=======================
+- Eje Y: Vertical (arriba/abajo)
+- Eje X: Horizontal (izquierda/derecha)
+- Eje Z: Profundidad (adelante/atrás)
+
+El personaje está centrado en el origen (0, 0, 0) y mide aproximadamente
+4 unidades de altura desde los pies hasta la cabeza.
+
+
+FLUJO DE TRANSFORMACIONES:
+==========================
+
+1. Cada nodo tiene una transformación local (transform)
+2. Al dibujar, se calcula: T_acumulada = T_padre × T_local
+3. Esta T_acumulada se pasa recursivamente a los hijos
+4. Antes de dibujar la geometría, se envía T_acumulada al shader
+5. El shader aplica: gl_Position = Projection × View × T_acumulada × vertex
+
+Esto permite que cuando rotas el hombro, todo el brazo se mueva.
+Y cuando rotas el codo, solo el antebrazo y la mano se mueven.
+
+
+ARCHIVOS DEL PROYECTO:
+======================
+
+main.py (638 líneas)
+  ├─ Clase ShaderProgram: Maneja compilación de shaders
+  ├─ Función create_character(): Construye el grafo de escena
+  ├─ Clase Pose: Define pose + cámara
+  ├─ Función get_poses(): Define las 3 poses dramáticas
+  ├─ Función apply_pose(): Aplica rotaciones a las articulaciones
+  └─ Clase TareaWindow: Ventana principal con rendering
+
+scene_graph.py (50 líneas)
+  └─ Clase SceneGraphNode: Nodo del grafo con transformaciones jerárquicas
+
+transformations.py (105 líneas)
+  └─ Funciones para matrices de transformación (translate, rotate, scale, etc.)
+
+geometry.py (145 líneas)
+  ├─ Clase Mesh: Maneja VAO, VBO, EBO
+  ├─ create_cube(): Genera un cubo
+  ├─ create_sphere(): Genera una esfera
+  └─ create_cylinder(): Genera un cilindro
+
+vertex_shader.glsl (14 líneas)
+  └─ Transforma vértices con MVP matrices
+
+fragment_shader.glsl (30 líneas)
+  └─ Iluminación Phong (ambiente + difusa + especular)
+
+
+TOTAL DE LÍNEAS DE CÓDIGO: ~982 líneas
+"""

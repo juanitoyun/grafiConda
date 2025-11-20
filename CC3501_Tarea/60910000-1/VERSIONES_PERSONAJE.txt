@@ -1,0 +1,157 @@
+============================================================
+GUÍA DE VERSIONES DEL PERSONAJE
+============================================================
+
+Para cambiar de versión:
+1. Abre el archivo main.py
+2. En las primeras líneas (alrededor de la línea 75) encontrarás:
+   ACTIVE_VERSION = 1  # <-- CAMBIA ESTE NÚMERO (1-5)
+3. Cambia el número a la versión que quieras probar
+4. Guarda el archivo
+5. Ejecuta el programa con: python -m 60910000-1
+
+============================================================
+VERSIÓN 1: ATLETA PROPORCIONADO ⚽ (Actual - Realista)
+============================================================
+Descripción:
+- Proporciones realistas y atléticas
+- Torso mediano, brazos delgados profesionales
+- Piernas bien definidas
+- Aspecto de jugador de fútbol
+
+Colores:
+- Camiseta: Azul (RGB: 0.2, 0.3, 0.8)
+- Piel: Beige claro (RGB: 0.9, 0.7, 0.6)
+- Pantalones: Negro (RGB: 0.1, 0.1, 0.1)
+- Zapatos: Café (RGB: 0.3, 0.2, 0.1)
+
+Características:
+✓ Proporciones armoniosas
+✓ Colores clásicos deportivos
+✓ Ideal para poses atléticas
+✓ Versión equilibrada y profesional
+
+============================================================
+VERSIÓN 2: SUPERHÉROE MUSCULOSO 💪
+============================================================
+Descripción:
+- Torso ancho y poderoso
+- Brazos y piernas gruesos (musculatura marcada)
+- Hombros prominentes
+- Aspecto de superhéroe o luchador
+
+Colores:
+- Camiseta: Rojo intenso (RGB: 0.8, 0.1, 0.1)
+- Piel: Beige rosado (RGB: 0.95, 0.8, 0.7)
+- Pantalones: Azul oscuro (RGB: 0.0, 0.0, 0.5)
+- Zapatos: Dorado (RGB: 0.8, 0.7, 0.0)
+
+Características:
+✓ Aspecto imponente y poderoso
+✓ Colores vibrantes tipo cómic
+✓ Ideal para poses heroicas
+✓ Torso 33% más ancho que versión 1
+✓ Brazos 50% más gruesos
+
+============================================================
+VERSIÓN 3: PERSONAJE CARTOON/ANIME 🎨
+============================================================
+Descripción:
+- Cabeza grande (estilo chibi/caricatura)
+- Cuerpo pequeño y compacto
+- Proporciones exageradas tipo anime
+- Aspecto adorable y expresivo
+
+Colores:
+- Camiseta: Naranja brillante (RGB: 1.0, 0.5, 0.0)
+- Piel: Muy clara (RGB: 1.0, 0.9, 0.8)
+- Pantalones: Verde (RGB: 0.2, 0.6, 0.3)
+- Zapatos: Blanco (RGB: 0.9, 0.9, 0.9)
+
+Características:
+✓ Cabeza 30% más grande
+✓ Cuerpo 20% más pequeño
+✓ Colores vibrantes y alegres
+✓ Ideal para animaciones cartoon
+✓ Estilo kawaii/divertido
+
+============================================================
+VERSIÓN 4: ROBOT/MECÁNICO 🤖
+============================================================
+Descripción:
+- Formas más cuadradas y rígidas
+- Aspecto metálico y tecnológico
+- Proporciones robóticas
+- Estilo ciencia ficción
+
+Colores:
+- Cuerpo: Gris metálico (RGB: 0.3, 0.3, 0.35)
+- Articulaciones: Gris claro (RGB: 0.6, 0.6, 0.65)
+- Piernas: Gris oscuro (RGB: 0.15, 0.15, 0.2)
+- Pies: Café oxidado (RGB: 0.4, 0.2, 0.0)
+
+Características:
+✓ Paleta de grises metálicos
+✓ Aspecto industrial/futurista
+✓ Torso más voluminoso y cuadrado
+✓ Ideal para escenas sci-fi
+✓ Sin colores vivos (realismo metálico)
+
+============================================================
+VERSIÓN 5: ELEGANTE/ESTILIZADO 🎩
+============================================================
+Descripción:
+- Proporciones alargadas y esbeltas
+- Silueta elegante tipo modelo
+- Cuello largo, extremidades delgadas
+- Aspecto refinado y sofisticado
+
+Colores:
+- Traje: Azul oscuro elegante (RGB: 0.15, 0.15, 0.25)
+- Piel: Bronceada (RGB: 0.85, 0.65, 0.55)
+- Pantalones: Gris carbón (RGB: 0.25, 0.25, 0.3)
+- Zapatos: Negro brillante (RGB: 0.1, 0.1, 0.15)
+
+Características:
+✓ Torso 15% más alto que versión 1
+✓ Extremidades más delgadas (elegancia)
+✓ Colores sobrios y profesionales
+✓ Aspecto de traje formal
+✓ Ideal para poses dramáticas elegantes
+
+============================================================
+RECOMENDACIONES POR TIPO DE POSE
+============================================================
+
+Para "Postura Intimidante":
+→ Recomendado: Versión 2 (Superhéroe) o Versión 4 (Robot)
+  (Aspecto más amenazante)
+
+Para "Señalando al Futuro":
+→ Recomendado: Versión 1 (Atleta) o Versión 5 (Elegante)
+  (Poses dinámicas y expresivas)
+
+Para "CelebracionEpica" (Bellingham):
+→ Recomendado: Versión 1 (Atleta) o Versión 2 (Superhéroe)
+  (Contexto deportivo y victorioso)
+
+============================================================
+INSTRUCCIONES PARA CAMBIAR DE VERSIÓN
+============================================================
+
+PASO 1: Abre main.py en tu editor
+PASO 2: Busca la línea (alrededor de línea 75):
+        ACTIVE_VERSION = 1  # <-- CAMBIA ESTE NÚMERO (1-5)
+PASO 3: Cambia el número (1, 2, 3, 4, o 5)
+PASO 4: Guarda el archivo (Ctrl + S)
+PASO 5: Ejecuta: cd "c:\Users\56942\Desktop\CC3501_Tarea"
+                 python -m 60910000-1
+
+PASO 6: Presiona ESPACIO para cambiar entre poses
+PASO 7: Si quieres probar otra versión, cierra el programa (ESC)
+        y repite desde el PASO 2
+
+============================================================
+NOTA: Todas las versiones funcionan con las 3 poses y sus
+      cámaras específicas. Solo cambian los tamaños y colores.
+============================================================

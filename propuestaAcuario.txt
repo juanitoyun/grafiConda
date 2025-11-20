@@ -1,0 +1,23 @@
+
+=================================== PROPUESTA PROYECTO TAREA 3 ======================================
+
+Integrante: Juan Ignacio Reyes Marchant (21.211.977-6)
+Curso: Modelación y Computación Gráfica para Ingenieros
+Título: Acuario Virtual Inmersivo con Animación 3D
+
+>>> La idea para mi proyecto es construir un modelo 3D, virtual y animado, de un acuario con peces 
+simples, y un ambiente tan realista como las herramientas del curso lo permita, donde los peces se 
+muevan mediante simulaciones de comportamiento (algoritmos de boids), además me gsutaría implementar 
+sistemas de perticulas que simulen burbujas en pantalla, además la presencia de algas en movimiento de 
+deformacion simulando corrientes de agua, todo con sus debidas texturas e iluminacion que favorezcan 
+el realismo y verosimilitud del acuario. Con respecto a la cámara, no estoy seguro si hacerla iterac-
+tiva (móvil), en distintas perspectivas o fija, acepto sugerencias para esto. Si se abre la posibilidad 
+de añadir interaccion de caracteristicas del entorno para el usuario, bienvenido sea, siempre y cuando
+se mantenga el principal objetivo: "sumergir" al usuari@ en un ambiente acuático realista e inmersivo.
+
+Saludos 
+
+Juanito
+21.211.977-6
+
+=================================================================================================== ._.
