@@ -61,7 +61,7 @@ func _unhandled_input(event: InputEvent) -> void:
             distance = clamp(distance + 0.9, 7.0, 24.0)
 
     elif event is InputEventMouseMotion and _mouse_dragging:
-        var delta := event.position - _mouse_last
+        var delta: Vector2 = event.position - _mouse_last
         yaw -= delta.x * 0.006
         pitch = clamp(pitch - delta.y * 0.006, -1.15, 1.15)
         _mouse_moved += delta.length()
@@ -87,7 +87,7 @@ func _unhandled_input(event: InputEvent) -> void:
     elif event is InputEventScreenDrag:
         _touches[event.index] = event.position
         if _touches.size() == 1:
-            var drag_delta := event.position - _single_touch_last
+            var drag_delta: Vector2 = event.position - _single_touch_last
             yaw -= drag_delta.x * 0.008
             pitch = clamp(pitch - drag_delta.y * 0.008, -1.15, 1.15)
             _single_touch_moved += drag_delta.length()
