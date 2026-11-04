@@ -112,19 +112,19 @@ func _flocking_force(index: int) -> Vector3:
     var total_force := Vector3.ZERO
 
     if separation_count > 0 and separation.length() > 0.001:
-        var desired_separation := (separation / float(separation_count)).normalized() * fish.max_speed
+        var desired_separation: Vector3 = (separation / float(separation_count)).normalized() * fish.max_speed
         total_force += (desired_separation - fish.velocity).limit_length(fish.max_force) * separation_weight
 
     if neighbor_count > 0:
-        var desired_alignment := avg_velocity / float(neighbor_count)
+        var desired_alignment: Vector3 = avg_velocity / float(neighbor_count)
         if desired_alignment.length() > 0.001:
             desired_alignment = desired_alignment.normalized() * fish.max_speed
             total_force += (desired_alignment - fish.velocity).limit_length(fish.max_force) * alignment_weight
 
-        var center := center_of_mass / float(neighbor_count)
-        var to_center := center - fish.position
+        var center: Vector3 = center_of_mass / float(neighbor_count)
+        var to_center: Vector3 = center - fish.position
         if to_center.length() > 0.001:
-            var desired_cohesion := to_center.normalized() * fish.max_speed
+            var desired_cohesion: Vector3 = to_center.normalized() * fish.max_speed
             total_force += (desired_cohesion - fish.velocity).limit_length(fish.max_force) * cohesion_weight
 
     return total_force
@@ -133,7 +133,7 @@ func _boundary_force(fish) -> Vector3:
     var min_bound := aquarium_bounds.position
     var max_bound := aquarium_bounds.position + aquarium_bounds.size
     var margin := 0.85
-    var strength := fish.max_force * 1.6
+    var strength: float = fish.max_force * 1.6
     var force := Vector3.ZERO
 
     if fish.position.x < min_bound.x + margin:
@@ -154,7 +154,7 @@ func _boundary_force(fish) -> Vector3:
     return force
 
 func _steer_towards(fish, target: Vector3, target_speed: float) -> Vector3:
-    var desired := target - fish.position
+    var desired: Vector3 = target - fish.position
     if desired.length() < 0.001:
         return Vector3.ZERO
     desired = desired.normalized() * target_speed
@@ -167,7 +167,7 @@ func _nearest_food_index(position: Vector3) -> int:
         var node = foods[i]["node"]
         if not is_instance_valid(node):
             continue
-        var distance := position.distance_squared_to(node.position)
+        var distance: float = position.distance_squared_to(node.position)
         if distance < best_distance:
             best_distance = distance
             best_index = i
